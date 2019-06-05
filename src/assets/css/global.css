@@ -1,0 +1,154 @@
+html {
+    font-size: 100px;
+    line-height: 1;
+}
+
+/* 滚动条一直在
+html {
+    overflow-y: scroll;
+} */
+
+body {
+    font-family: Microsoft YaHei, Arial, Helvetica, sans-serif;
+}
+
+/* 滚动条最佳优化方案 但左边会有白边
+html { 
+    margin-left: calc(100vw - 100%);
+ } */
+
+.container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #bbb;
+}
+
+input,
+textarea {
+    border: 1px solid #dddddd;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #7a45e5;
+}
+
+button {
+    cursor: pointer;
+}
+
+button.one,
+a.one {
+    border: 1px solid #7a45e5;
+    color: #7a45e5;
+    padding: 2px 8px;
+    display: inline-block
+}
+
+button.one:hover,
+a.one:hover {
+    background: #f1f8ff
+}
+
+button.two,
+a.two {
+    border: none;
+    background: #7a45e5;
+    color: #fff;
+    padding: 2px 8px;
+    display: inline-block
+}
+
+button.two:hover,
+a.two:hover {
+    background: #6928ec
+}
+
+.strong {
+    color: #333;
+    font-weight: 800;
+}
+
+.gray {
+    color: #999999;
+}
+
+fieldset {
+    border: none
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.zebraBg {
+    background: #f7f4f9;
+}
+
+.relative {
+    position: relative;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.flex {
+    display: flex
+}
+
+.card {
+    box-shadow: 0px 0px 8px #dddddd;
+}
+
+.no-border {
+    border: none;
+}
+
+.border {
+    border: 1px solid #e3e3e3;
+}
+
+.border-left {
+    border-left: 1px solid #e3e3e3;
+}
+
+.border-top {
+    border-top: 1px solid #e3e3e3;
+}
+
+.border-right {
+    border-right: 1px solid #e3e3e3;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.noPadding {
+    padding: 0
+}
+
+.blue {
+    color: #51b8f1
+}
+
+.sticky {
+    min-height: calc(100vh - 380px);
+}
+
+#my-admin-title {
+    font-size: 0.18rem;
+    font-weight: bold;
+    margin-bottom: 0.24rem;
+    padding-bottom: 0.24rem;
+}
