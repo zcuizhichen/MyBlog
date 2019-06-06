@@ -3,6 +3,7 @@
     <global-header/>
     <main>
       <side-bar/>
+      <router-view class="router-view"/>
     </main>
   </div>
 </template>
@@ -26,7 +27,12 @@ main {
   display: flex;
 
   .side-bar-com {
-    width: 124px;
+    width: 152px;
+    margin-right: 76px;
+  }
+
+  .router-view {
+    flex: 1;
   }
 }
 </style>

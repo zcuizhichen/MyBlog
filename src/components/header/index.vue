@@ -11,7 +11,7 @@ export default {};
 <style lang="stylus">
 .header-com {
   text-align: center;
-  margin: 40px 0 60px;
+  margin: 40px 0 52px;
 
   i {
     opacity: 0.5;

@@ -6,7 +6,7 @@
       </div>
       <div class="abstract">
         <div class="my-name">Choke</div>
-        <div class="my-desc">Share Everything</div>
+        <div class="my-desc">Share Everythings</div>
         <div class="blog-state">
           <router-link
             :to="it.route"
@@ -105,13 +105,13 @@ export default {
 <style lang="stylus">
 .side-bar-com {
   .my-info {
-    padding: 0 8px;
+    padding: 0 16px;
     padding-bottom: 28px;
     margin-bottom: 24px;
 
     .avatar-wrapper {
       height: 0;
-      padding-bottom: 108px;
+      padding-bottom: 120px;
       margin-bottom: 20px;
       background: #ddd;
       overflow: hidden;
@@ -132,10 +132,10 @@ export default {
 
       .blog-state {
         display: flex;
-        margin: 0 -14px;
+        margin: 0 -16px;
 
         .state-item {
-          padding: 0 14px;
+          padding: 0 16px;
 
           &:hover {
             .item-name {
