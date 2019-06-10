@@ -11,12 +11,11 @@ export default {};
 <style lang="stylus">
 .header-com {
   text-align: center;
-  margin: 40px 0 52px;
+  margin: 32px 0 44px;
 
   i {
     opacity: 0.5;
     font-size: 14px;
-    // font-weight: 200;
   }
 }
 </style>

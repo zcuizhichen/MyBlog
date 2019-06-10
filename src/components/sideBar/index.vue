@@ -23,8 +23,10 @@
 
     <ul class="route-list border-bottom">
       <li v-for="it in routeList" :key="it.name">
-        <i :class="it.icon"></i>
-        <router-link :to="it.route">{{it.name}}</router-link>
+        <router-link :to="it.route">
+          <i :class="it.icon"></i>
+          {{it.name}}
+        </router-link>
       </li>
     </ul>
 
@@ -105,13 +107,13 @@ export default {
 <style lang="stylus">
 .side-bar-com {
   .my-info {
-    padding: 0 16px;
+    padding: 0 21px;
     padding-bottom: 28px;
     margin-bottom: 24px;
 
     .avatar-wrapper {
       height: 0;
-      padding-bottom: 120px;
+      padding-bottom: 110px;
       margin-bottom: 20px;
       background: #ddd;
       overflow: hidden;
@@ -172,32 +174,26 @@ export default {
     li {
       padding: 10px 0;
 
-      &:hover {
-        i, a {
-          color: #222;
-        }
-      }
-
       &:last-child {
         i {
           font-weight: 900;
         }
       }
 
-      i, a {
-        vertical-align: middle;
-        color: #999;
-        transition: all 0.2s;
-      }
-
-      i {
-        margin-right: 12px;
-        font-size: 18px;
-      }
-
       a {
         font-size: 16px;
         letter-spacing: 4px;
+        color: #999;
+        transition: all 0.2s;
+
+        &:hover {
+          color: #222;
+        }
+
+        i {
+          margin-right: 2px;
+          font-size: 18px;
+        }
       }
     }
   }

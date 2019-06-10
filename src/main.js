@@ -5,7 +5,7 @@ import router from './router'
 import ElementUI from 'element-ui';
 import './element-variables.scss'
 
-import './assets/css/global.css'
+import './assets/css/global.styl'
 import './assets/css/layout.css'
 import './assets/css/universal.css'
 

@@ -2,10 +2,11 @@
   <div class="post-item">
     <div class="add-time">{{addTime}}</div>
     <div class="right-info">
-      <div class="post-name">{{it.name}}</div>
+      <div class="post-name" @click="pushPost">{{it.name}}</div>
       <div class="post-tags">
         <span class="tag-item" v-for="(tag, index) in it.tags" :key="index">{{tag}}</span>
       </div>
+      <div class="post-content" @click="pushPost">{{it.content}}</div>
     </div>
   </div>
 </template>
@@ -26,16 +27,24 @@ export default {
       let { add_timestamp: time } = this.it;
       return timestampToDate(time);
     }
+  },
+
+  methods: {
+    pushPost() {
+      this.$router.push(`/post/${this.it.id}`);
+      // this.$router.push(`/tags`);
+    }
   }
 };
 </script>
 
 <style lang="stylus">
 @import '~@/assets/css/var.styl';
+@import '~@/assets/css/mixins.styl';
 
 .post-item {
   display: flex;
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 
   .add-time {
     font-size: 17px;
@@ -62,6 +71,7 @@ export default {
 
     .post-tags {
       margin-left: -12px;
+      margin-bottom: 16px;
 
       .tag-item {
         font-size: 14px;
@@ -85,6 +95,19 @@ export default {
             padding-left: 12px;
           }
         }
+      }
+    }
+
+    .post-content {
+      lineClamp(2);
+      color: #555;
+      font-size: 14px;
+      line-height: 1.8em;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        color: #999;
       }
     }
   }

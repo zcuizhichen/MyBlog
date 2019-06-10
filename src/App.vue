@@ -5,34 +5,38 @@
       <side-bar/>
       <router-view class="router-view"/>
     </main>
+    <global-footer/>
   </div>
 </template>
 
 <script>
 import GlobalHeader from "@/components/header";
 import SideBar from "@/components/sideBar";
+import GlobalFooter from "@/components/footer";
 
 export default {
   name: "app",
 
   components: {
     GlobalHeader,
-    SideBar
+    SideBar,
+    GlobalFooter
   }
 };
 </script>
 
 <style lang='stylus'>
 main {
+  min-height: calc(100vh - 200px);
   display: flex;
 
   .side-bar-com {
     width: 152px;
-    margin-right: 76px;
   }
 
   .router-view {
     flex: 1;
+    margin-left: 60px;
   }
 }
 </style>

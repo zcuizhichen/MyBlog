@@ -29,7 +29,7 @@ export default {
 <style lang="stylus">
 .home-page {
   .post-list {
-    margin-bottom: 48px;
+    margin-bottom: 32px;
   }
 
   .pagination {

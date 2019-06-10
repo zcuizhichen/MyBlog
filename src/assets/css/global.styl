@@ -1,3 +1,5 @@
+@import './var.styl'
+
 html {
     font-size: 100px;
     line-height: 1;
@@ -10,7 +12,6 @@ html {
 
 body {
     font-family: "italic", Helvetica, Arial, "Heiti SC", "Microsoft YaHei";
-    ;
 }
 
 /* 滚动条最佳优化方案 但左边会有白边
@@ -24,51 +25,41 @@ html {
     margin-right: auto;
 }
 
-input::placeholder,
-textarea::placeholder {
-    color: #bbb;
-}
-
 input,
 textarea {
     border: 1px solid #dddddd;
+    transition: all .3s;
+    
+    &::placeholder {
+        color: #bbb;
+    }
+}
+
+input:hover,
+textarea:hover {
+    border-color: #c1c1c1;
 }
 
 input:focus,
 textarea:focus {
-    border-color: #7a45e5;
+    border-color: $mc;
 }
 
 button {
     cursor: pointer;
 }
 
-button.one,
-a.one {
-    border: 1px solid #7a45e5;
-    color: #7a45e5;
+button.one{
+    border: 1px solid $mc;
+    color: $mc;
     padding: 2px 8px;
     display: inline-block
+
+    &:hover{
+        background $htmc
+    }
 }
 
-button.one:hover,
-a.one:hover {
-    background: #f1f8ff
-}
-
-button.two,
-a.two {
-    border: none;
-    background: #7a45e5;
-    color: #fff;
-    padding: 2px 8px;
-    display: inline-block
-}
-
-button.two:hover,
-a.two:hover {
-    background: #6928ec
-}
 
 .strong {
     color: #333;
