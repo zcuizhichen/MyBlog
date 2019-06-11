@@ -2,7 +2,9 @@
   <div class="side-bar-com">
     <div class="my-info border-bottom">
       <div class="avatar-wrapper">
-        <img :src="require('@/assets/img/avatar.jpg')" alt="avatar">
+        <router-link to="/about">
+          <img :src="require('@/assets/img/avatar.jpg')" alt="avatar">
+        </router-link>
       </div>
       <div class="abstract">
         <div class="my-name">Choke</div>
@@ -23,10 +25,10 @@
 
     <ul class="route-list border-bottom">
       <li v-for="it in routeList" :key="it.name">
-        <router-link :to="it.route">
+        <span @click="pushRoute(it)">
           <i :class="it.icon"></i>
           {{it.name}}
-        </router-link>
+        </span>
       </li>
     </ul>
 
@@ -43,11 +45,19 @@
         class="link-item"
       >{{it.name}}</a>
     </div>
+
+    <search-popup :show.sync="showSearch"/>
   </div>
 </template>
 
 <script>
+import SearchPopup from "../searchPopup";
+
 export default {
+  components: {
+    SearchPopup
+  },
+
   data() {
     return {
       routeList: [
@@ -74,7 +84,7 @@ export default {
         {
           name: "搜索",
           icon: "el-icon-search",
-          route: "/"
+          route: "search"
         }
       ],
       stateList: [
@@ -98,8 +108,23 @@ export default {
           name: "chunkfang",
           link: "http://www.chuckfang.top/"
         }
-      ]
+      ],
+      showSearch: false
     };
+  },
+
+  methods: {
+    pushRoute(it) {
+      switch (it.route) {
+        case "search":
+          this.showSearch = true;
+          break;
+
+        default:
+          this.$router.push(it.route);
+          break;
+      }
+    }
   }
 };
 </script>
@@ -180,11 +205,12 @@ export default {
         }
       }
 
-      a {
+      span {
         font-size: 16px;
         letter-spacing: 4px;
         color: #999;
         transition: all 0.2s;
+        cursor: pointer;
 
         &:hover {
           color: #222;
