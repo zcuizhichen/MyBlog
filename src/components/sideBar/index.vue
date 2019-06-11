@@ -172,7 +172,7 @@ export default {
     margin-bottom: 24px;
 
     li {
-      padding: 10px 0;
+      padding: 8px 0;
 
       &:last-child {
         i {

@@ -44,7 +44,7 @@ export const list = [
         childrens: [
             {
                 id: 1,
-                name: '浅谈前端中的二进制数据类型',
+                title: '浅谈前端中的二进制数据类型',
                 add_timestamp: 1559838386395,
                 tags: ['Vue', 'Js'],
                 pv: 1542,
@@ -52,7 +52,7 @@ export const list = [
             },
             {
                 id: 2,
-                name: '浅谈前端中的二进制数据类型',
+                title: '浅谈前端中的二进制数据类型',
                 add_timestamp: 1559838386395,
                 tags: ['Vue', 'Js'],
                 pv: 1542,
@@ -60,7 +60,7 @@ export const list = [
             },
             {
                 id: 3,
-                name: '浅谈前端中的二进制数据类型',
+                title: '浅谈前端中的二进制数据类型',
                 add_timestamp: 1559838386395,
                 tags: ['Vue', 'Js'],
                 pv: 1542,
@@ -68,7 +68,7 @@ export const list = [
             },
             {
                 id: 4,
-                name: '浅谈前端中的二进制数据类型',
+                title: '浅谈前端中的二进制数据类型',
                 add_timestamp: 1559838386395,
                 tags: ['Vue', 'Js'],
                 pv: 1542,
@@ -82,7 +82,7 @@ export const list = [
         childrens: [
             {
                 id: 1,
-                name: '浅谈前端中的二进制数据类型',
+                title: '浅谈前端中的二进制数据类型',
                 add_timestamp: 1559838386395,
                 tags: ['Vue', 'Js'],
                 pv: 1542,
@@ -90,7 +90,7 @@ export const list = [
             },
             {
                 id: 2,
-                name: '浅谈前端中的二进制数据类型',
+                title: '浅谈前端中的二进制数据类型',
                 add_timestamp: 1559838386395,
                 tags: ['Vue', 'Js'],
                 pv: 1542,
@@ -98,7 +98,7 @@ export const list = [
             },
             {
                 id: 3,
-                name: '浅谈前端中的二进制数据类型',
+                title: '浅谈前端中的二进制数据类型',
                 add_timestamp: 1559838386395,
                 tags: ['Vue', 'Js'],
                 pv: 1542,
@@ -106,7 +106,7 @@ export const list = [
             },
             {
                 id: 4,
-                name: '浅谈前端中的二进制数据类型',
+                title: '浅谈前端中的二进制数据类型',
                 add_timestamp: 1559838386395,
                 tags: ['Vue', 'Js'],
                 pv: 1542,

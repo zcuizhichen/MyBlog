@@ -74,15 +74,15 @@ export default {
       }
 
       .tag-post {
-        margin-left: 36px;
+        margin-left: 52px;
 
         .post-item {
           display: block;
-          font-size: 17px;
-          line-height: 32px;
+          font-size: 18px;
+          line-height: 36px;
 
           a {
-            color: #333;
+            color: #444;
             transition: all 0.3s;
 
             &:hover {

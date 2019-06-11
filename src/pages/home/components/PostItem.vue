@@ -1,12 +1,12 @@
 <template>
-  <div class="post-item">
+  <div class="home-post-item">
     <div class="add-time">{{addTime}}</div>
     <div class="right-info">
       <div class="post-name" @click="pushPost">{{it.name}}</div>
       <div class="post-tags">
         <span class="tag-item" v-for="(tag, index) in it.tags" :key="index">{{tag}}</span>
       </div>
-      <div class="post-content" @click="pushPost">{{it.content}}</div>
+      <div class="home-post-content" @click="pushPost">{{it.content}}</div>
     </div>
   </div>
 </template>
@@ -42,9 +42,9 @@ export default {
 @import '~@/assets/css/var.styl';
 @import '~@/assets/css/mixins.styl';
 
-.post-item {
+.home-post-item {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 36px;
 
   .add-time {
     font-size: 17px;
@@ -98,7 +98,7 @@ export default {
       }
     }
 
-    .post-content {
+    .home-post-content {
       lineClamp(2);
       color: #555;
       font-size: 14px;
