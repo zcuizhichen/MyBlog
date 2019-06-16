@@ -6,7 +6,7 @@
     </label>
     <label for="input-comment">
       <div class="inner-text">评论</div>
-      <textarea id="input-comment"></textarea>
+      <textarea id="input-comment" placeholder="欢迎调戏博主~如果想要收到评论回复提醒，请记得填写姓名哦"></textarea>
     </label>
     <div class="under-inline">
       <span class="under-desc">让你的评论影响到更多的人</span>
