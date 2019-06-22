@@ -1,7 +1,7 @@
 <template>
   <div class="home-page">
     <div class="post-list">
-      <post-item v-for="it in list" :key="it.id" :it="it"/>
+      <post-item v-for="it in list" :key="it._id" :it="it"/>
     </div>
     <div class="pagination">
       <el-pagination layout="prev, pager, next" :total="50"></el-pagination>
@@ -20,8 +20,19 @@ export default {
 
   data() {
     return {
-      list
+      list: []
     };
+  },
+
+  mounted() {
+    this.getPostList();
+  },
+
+  methods: {
+    async getPostList() {
+      let { data, total } = await this.$http("get", "/api/post/read");
+      this.list = data;
+    }
   }
 };
 </script>

@@ -24,7 +24,7 @@
     </div>
 
     <ul class="route-list border-bottom">
-      <li v-for="it in routeList" :key="it.name">
+      <li :class="{select:selectRoute === it.route}" v-for="it in routeList" :key="it.name">
         <span @click="pushRoute(it)">
           <i :class="it.icon"></i>
           {{it.name}}
@@ -60,6 +60,7 @@ export default {
 
   data() {
     return {
+      selectRoute: "/",
       routeList: [
         {
           name: "主页",
@@ -121,6 +122,7 @@ export default {
           break;
 
         default:
+          this.selectRoute = it.route;
           this.$router.push(it.route);
           break;
       }
@@ -130,6 +132,8 @@ export default {
 </script>
 
 <style lang="stylus">
+@import '~@/assets/css/var.styl';
+
 .side-bar-com {
   .my-info {
     padding: 0 21px;
@@ -198,6 +202,12 @@ export default {
 
     li {
       padding: 8px 0;
+
+      &.select {
+        i, span {
+          color: $mc;
+        }
+      }
 
       &:last-child {
         i {

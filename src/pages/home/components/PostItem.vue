@@ -2,11 +2,16 @@
   <div class="home-post-item">
     <div class="add-time">{{addTime}}</div>
     <div class="right-info">
-      <div class="post-name" @click="pushPost">{{it.name}}</div>
+      <div class="post-name" @click="pushPost">{{it.title}}</div>
       <div class="post-tags">
-        <span class="tag-item" v-for="(tag, index) in it.tags" :key="index">{{tag}}</span>
+        <router-link
+          :to="`/tags?_id=${tag._id}`"
+          class="tag-item"
+          v-for="tag in it.tags"
+          :key="tag._id"
+        >{{tag.title}}</router-link>
       </div>
-      <div class="home-post-content" @click="pushPost">{{it.content}}</div>
+      <div class="home-post-content" @click="pushPost" v-html="abstract"></div>
     </div>
   </div>
 </template>
@@ -24,15 +29,22 @@ export default {
 
   computed: {
     addTime() {
-      let { add_timestamp: time } = this.it;
+      let { publish_timestamp: time } = this.it;
       return timestampToDate(time);
+    },
+
+    abstract() {
+      // 匹配所有html结束标签
+      let html = this.it.content.replace(/<\/[^>]+>/g, "</p>");
+      // 匹配所有html开始标签
+      html = html.replace(/<[^/][^>]+>/g, "<p>");
+      return html;
     }
   },
 
   methods: {
     pushPost() {
-      this.$router.push(`/post/${this.it.id}`);
-      // this.$router.push(`/tags`);
+      this.$router.push(`/post/${this.it._id}`);
     }
   }
 };

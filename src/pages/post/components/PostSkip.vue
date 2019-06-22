@@ -1,11 +1,23 @@
 <template>
   <div class="post-skip border-bottom">
-    <div class="prev-post">
+    <div class="pre-post">
       <i class="el-icon-arrow-left"></i>
-      <span class="inner-text">{{post.skip.prev.title}}</span>
+      <router-link
+        :to="`/post/${skip.pre._id}`"
+        :title="skip.pre.title"
+        class="inner-text"
+        v-if="skip && skip.pre"
+      >{{skip.pre.title}}</router-link>
+      <span class="inner-text no-post" v-else>无上一篇文章</span>
     </div>
     <div class="next-post">
-      <span class="inner-text">{{post.skip.next.title}}</span>
+      <router-link
+        :to="`/post/${skip.next._id}`"
+        :title="skip.next.title"
+        class="inner-text"
+        v-if="skip && skip.next"
+      >{{skip.next.title}}</router-link>
+      <span class="inner-text no-post" v-else>无下一篇文章</span>
       <i class="el-icon-arrow-right"></i>
     </div>
   </div>
@@ -14,7 +26,7 @@
 <script>
 export default {
   props: {
-    post: {
+    skip: {
       type: Object,
       default: () => {}
     }
@@ -31,9 +43,8 @@ export default {
   padding-bottom: 40px;
   margin-bottom: 40px;
 
-  .prev-post, .next-post {
+  .pre-post, .next-post {
     position: relative;
-    cursor: pointer;
 
     i {
       position: absolute;
@@ -44,14 +55,23 @@ export default {
       lineClamp(1);
       color: #777;
       transition: all 0.3s;
+      cursor: pointer;
 
       &:hover {
         color: #333;
       }
+
+      &.no-post {
+        cursor: default;
+
+        &:hover {
+          color: #777;
+        }
+      }
     }
   }
 
-  .prev-post {
+  .pre-post {
     padding-right: 50px;
 
     i {

@@ -9,9 +9,13 @@ import './assets/css/global.styl'
 import './assets/css/layout.css'
 import './assets/css/universal.css'
 
+import axios from './lib/axios'
+
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+
+Vue.prototype.$http = axios
 
 new Vue({
   router,

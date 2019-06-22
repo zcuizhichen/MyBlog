@@ -6,8 +6,8 @@
         <div class="title">{{it.title}}</div>
         <div class="childrens">
           <div class="post-item" v-for="it in it.childrens" :key="it.id">
-            <span class="post-date">{{releaseTime(it.add_timestamp)}}</span>
-            <router-link :to="`/post/${it.id}`">
+            <span class="post-date">{{releaseTime(it.publish_timestamp)}}</span>
+            <router-link :to="`/post/${it._id}`">
               <span class="post-title">{{it.title}}</span>
             </router-link>
           </div>
@@ -24,11 +24,21 @@ import { timestampToDate } from "@/lib/help";
 export default {
   data() {
     return {
-      list
+      list: []
     };
   },
 
+  mounted() {
+    this.getList();
+  },
+
   methods: {
+    async getList() {
+      let data = await this.$http("get", "/api/archive/read");
+      console.log(data);
+      this.list = data;
+    },
+
     releaseTime(timestamp) {
       return timestampToDate(timestamp, "xx-xx");
     }

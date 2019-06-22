@@ -1,7 +1,7 @@
 export default {
     id: 1,
     title: '浅谈前端中的二进制数据类型',
-    release_timestamp: 1559838386395,
+    publish_timestamp: 1559838386395,
     tags: [{ id: 1, title: 'Vue' }, { id: 2, title: 'Js' }],
     pv: 1542,
     comments: [

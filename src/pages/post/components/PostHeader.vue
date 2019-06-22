@@ -2,10 +2,15 @@
   <div class="post-header">
     <div class="post-title">{{post.title}}</div>
     <div class="post-info">
-      <span class="release-time">发布于: {{releaseTime}}</span>
+      <span class="publish-time">发布于: {{publishTime}}</span>
       <span class="post-tags">
         标签:
-        <span class="tag-item" v-for="tag in post.tags" :key="tag.id">{{tag.title}}</span>
+        <router-link
+          to="/tags"
+          class="tag-item"
+          v-for="tag in post.tags"
+          :key="tag.id"
+        >{{tag.title}}</router-link>
       </span>
       <span class="post-pv">访问: {{post.pv}}</span>
     </div>
@@ -24,8 +29,8 @@ export default {
   },
 
   computed: {
-    releaseTime() {
-      let { release_timestamp: time } = this.post;
+    publishTime() {
+      let { publish_timestamp: time } = this.post;
       return timestampToDate(time, "xxxx-xx-xx xx-xx");
     }
   }
